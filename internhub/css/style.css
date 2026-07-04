@@ -1,0 +1,152 @@
+/* Digital Internship Portal - Mobile Responsive CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #F8FAF9;
+    color: #0D1F19;
+}
+
+/* Mobile First - Sidebar becomes top bar */
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    width: 100%;
+    height: 60px;
+    background: #062E22;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    z-index: 1000;
+    padding: 0 10px;
+}
+
+.sb-brand, .sb-user, .sb-foot {
+    display: none;
+}
+
+.sb-nav {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    gap: 5px;
+    overflow-x: auto;
+}
+
+.sb-item {
+    white-space: nowrap;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.sb-sec {
+    display: none;
+}
+
+/* Main content */
+.main {
+    margin-left: 0;
+    padding-bottom: 70px;
+}
+
+/* Make cards stack on mobile */
+.dash-grid, .pricing-grid, .curriculum-grid, .outcome-grid, .why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+}
+
+.stats-4, .stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.internship-grid {
+    grid-template-columns: 1fr !important;
+}
+
+/* Larger touch targets */
+.btn-gold, .btn-apply, .btn-submit, .tb-btn {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+}
+
+/* Better spacing */
+.container, .content {
+    padding: 1rem !important;
+}
+
+.card-body, .section-body {
+    padding: 1rem !important;
+}
+
+/* Tables scroll horizontally */
+.co-table, table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Application form full width */
+.apply-card-inner {
+    padding: 1.5rem !important;
+}
+
+.field-textarea {
+    font-size: 14px !important;
+}
+
+/* Footer */
+.footer-inner {
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Desktop styles (screen wider than 768px) */
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 240px;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .sb-brand, .sb-user, .sb-foot {
+        display: flex;
+    }
+    
+    .sb-nav {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    
+    .sb-item {
+        white-space: normal;
+    }
+    
+    .main {
+        margin-left: 240px;
+        padding-bottom: 0;
+    }
+    
+    .dash-grid {
+        grid-template-columns: 1fr 300px !important;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    .internship-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)) !important;
+    }
+}
